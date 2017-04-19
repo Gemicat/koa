@@ -8,6 +8,7 @@ const fn_index = async (ctx, next) => {
 }
 
 const fn_signin = async (ctx, next) => {
+    console.log(ctx.request.body);
     var name = ctx.request.body.name || '';
     var password = ctx.request.body.password || '';
     console.log(`signin with name: ${name}, password: ${password}`);
