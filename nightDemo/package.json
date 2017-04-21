@@ -1,0 +1,21 @@
+{
+  "name": "nightDemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-register": "6.24.1",
+    "check-versions": "1.0.0",
+    "chromedriver": "2.29.0",
+    "cross-spawn": "5.1.0",
+    "koa": "2.2.0",
+    "koa-static": "3.0.0",
+    "nightwatch": "0.9.14",
+    "selenium-server": "3.3.1"
+  }
+}
