@@ -1,11 +1,10 @@
 const exec = require('child_process').execSync;
-const RL = require('readline');
 
 const getCode = async (shell) => {
     let data = '';
     return exec(shell, function(err, stdout, stderr) {
         if (err) {
-            console.log(err + '!!!!!!!!!');
+            console.log('命令运行失败：' + err);
         } else {
             console.log(stderr);
             data = JSON.stringify(stdout);
@@ -15,9 +14,13 @@ const getCode = async (shell) => {
 
 module.exports = {
     'GET /code': async (ctx, next) => {
-        let shell = ctx.query.code || 'ls -l';
-        console.log(shell);
-        let data = await getCode(shell);
+        let shell = (ctx.query.code || 'ls -l').trim();
+        let data = '';
+        try{
+            data = await getCode(shell);
+        } catch(e) {
+            data = '无效的命令：' + shell;
+        }
         ctx.render('code.html', {
             code: data,
             value: shell
