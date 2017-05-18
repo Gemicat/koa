@@ -58,7 +58,7 @@ module.exports = {
     browser
       .waitForElementVisible('body', 1000)
       .setValue('input[name=userid]', 'shiyx@dxy.cn')
-      .setValue('input[name=passwd]', 'syx752336543')
+      .setValue('input[name=passwd]', 'syx7523365431')
       .click('button.J-submit')
       .pause(2000)
   },
